@@ -34,73 +34,103 @@ Analyze a phishing email for malicious signs like email spoofing, suspicious lin
 ## 📨 Sample Phishing Email (Analyzed)
 
 
-### 🔎 Initial Red Flags
-- ❌ Fake domain mimicking Amazon
-- ❗ Urgent, emotionally triggering language
-- ⚠️ Dangerous phishing link pretending to be a login page
+---
+
+## 🔍 Phishing Indicators Identified
+
+| No. | Indicator                | Description |
+|-----|--------------------------|-------------|
+| 1️⃣ | Spoofed Email Address    | `amaz0n-security.com` resembles `amazon.com` |
+| 2️⃣ | Suspicious Link          | Links to malicious domain not related to Amazon |
+| 3️⃣ | Urgent Tone              | Threats like “24-hour suspension” |
+| 4️⃣ | Threat Language          | “Failure to comply…” used to scare |
+| 5️⃣ | Grammar Errors           | Awkward and robotic wording |
+| 6️⃣ | Hover Link Mismatch      | Shown URL ≠ actual redirect |
+| 7️⃣ | Header Discrepancies     | SPF fail, DKIM missing |
+| 8️⃣ | Social Engineering       | Pretends to be trusted brand (Amazon) |
 
 ---
 
-## 🔍 Technical Analysis of Phishing Indicators
+## 🧪 Email Header Analysis
 
-| 🔢 | **Indicator**                | **Description** |
-|-----|-----------------------------|------------------|
-| 1️⃣ | **Spoofed Sender**          | `support@amaz0n-security.com` appears legit but is a typo-squatted domain |
-| 2️⃣ | **Phishing Link**           | Hidden behind a legitimate-looking text; goes to `amaz0n-secure-login.com` |
-| 3️⃣ | **Urgency/Threat**          | Creates pressure to act fast: "account will be suspended in 24 hrs" |
-| 4️⃣ | **Language Tricks**         | Fear-based social engineering tactics |
-| 5️⃣ | **Header Issues**           | SPF check failed, no DKIM present |
-| 6️⃣ | **Visual Deception**        | Uses Amazon branding in content to seem trustworthy |
-| 7️⃣ | **Hover Link Mismatch**     | Hovering shows a different link than the anchor text |
-| 8️⃣ | **Grammar/Style Flaws**     | Awkward phrasing and lack of branding consistency |
-
----
-
-## 🧪 Email Header Analysis (MXToolbox)
-
-- ✅ **Tool Used**: [https://mxtoolbox.com/EmailHeaders.aspx](https://mxtoolbox.com/EmailHeaders.aspx)
-- 🔍 **SPF**: Failed – sender not authorized to send on behalf of domain
-- 🔍 **DKIM**: Absent – email lacks proper signature verification
-- 🔍 **Return-Path**: Did not match "From" address
-- 🌍 **Origin IP**: Traced to an unusual/untrusted country
-
----
-
-## 🧠 Social Engineering Breakdown
-
-| Technique        | Used? | Explanation |
-|------------------|-------|-------------|
-| Authority        | ✅     | Pretends to be Amazon support |
-| Urgency          | ✅     | “Verify in 24 hours or lose access” |
-| Fear             | ✅     | Threatens with account deactivation |
-| Familiarity      | ✅     | Uses Amazon branding and language |
-| Scarcity         | ❌     | Not used in this example |
-
----
-
-## 🧰 Tools Used
-
-| Tool | Purpose |
-|------|---------|
-| MXToolbox | Header analysis |
-| VirusTotal | Link and attachment scanning |
-| Whois Lookup | Domain registration info |
-| Email Client | To view headers and links |
-| Browser Inspector | To view URL redirect behavior |
+- 🔍 **SPF**: ❌ Fail — not authorized sender  
+- 🔍 **DKIM**: ❌ Absent — no digital signature  
+- 🔍 **Return-Path**: Mismatched from sender  
+- 🌍 **Origin IP**: Traced to suspicious country  
+- ✅ **Tool Used**: [MXToolbox](https://mxtoolbox.com/EmailHeaders.aspx)
 
 ---
 
 ## 🖼️ Screenshots
 
-| Image | Description |
-|-------|-------------|
-| ![Email Sample](images/phishing-email-sample.png) | Screenshot of the phishing email |
-| ![Hover Link](images/link-hover-proof.png) | Proof of mismatched URLs |
-| ![Header Analysis](images/email-header-analysis.png) | Header results showing SPF fail & DKIM missing |
+### 1. 📧 Phishing Email Sample
+![Phishing Email Sample](https://user-images.githubusercontent.com/74102036/190601064-6d59c31b-bd83-45d8-9675-8c52aa7f02c2.png)
 
-> Upload the above images in a folder named `/images`.
+### 2. 🔗 Hover Link Mismatch
+![Hover Link Proof](https://blog.malwarebytes.com/wp-content/uploads/2020/03/fake-link-phishing.png)
+
+### 3. 📥 Email Header Analysis via MXToolbox
+![MXToolbox Header Result](https://www.talosintelligence.com/images/header_analysis_result.png)
+
+> 📌 These images were sourced for demonstration purposes. Replace them with your own for original reports.
 
 ---
 
-## 📂 Folder Structure
+## 🛠 Tools Used
+
+| Tool         | Function                        |
+|--------------|----------------------------------|
+| MXToolbox    | Header inspection & SPF check   |
+| VirusTotal   | URL/Attachment scanning         |
+| Whois Lookup | Domain origin and validity      |
+| Browser      | Link redirection checking       |
+| Email Client | Raw email inspection            |
+
+---
+
+## 🧠 Social Engineering Breakdown
+
+| Technique     | Used | Description |
+|---------------|------|-------------|
+| Authority     | ✅    | Pretends to be Amazon |
+| Urgency       | ✅    | “Act now or lose access” |
+| Fear          | ✅    | Account suspension threat |
+| Familiarity   | ✅    | Uses Amazon logo/language |
+| Scarcity      | ❌    | Not applicable in this case |
+
+---
+
+## 💬 Interview Questions and Answers
+
+### 1. **What is phishing?**
+Phishing is a type of cyberattack where attackers impersonate trusted entities to steal sensitive data like passwords, credit card details, or login credentials.
+
+### 2. **What are signs of a phishing email?**
+- Spoofed sender
+- Suspicious or shortened URLs
+- Urgent language
+- Poor grammar
+- Attachments asking for credentials
+
+### 3. **What is email spoofing?**
+It’s when the attacker forges the “From” address to make it look like it came from a trusted source.
+
+### 4. **What actions to take on suspected phishing?**
+- Don’t click any links
+- Report to IT/security team
+- Mark as spam/phishing
+- Block sender if needed
+
+---
+
+## 🔒 How to Protect Yourself
+
+- Always verify sender addresses
+- Hover over links before clicking
+- Never share credentials via email
+- Use strong spam filters and antivirus
+- Enable two-factor authentication (2FA)
+- Educate yourself & others regularly
+
+---
 
