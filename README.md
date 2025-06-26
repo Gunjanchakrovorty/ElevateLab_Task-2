@@ -64,13 +64,13 @@ Analyze a phishing email for malicious signs like email spoofing, suspicious lin
 ## 🖼️ Screenshots
 
 ### 1. 📧 Phishing Email Sample
-![Phishing Email Sample](https://user-images.githubusercontent.com/74102036/190601064-6d59c31b-bd83-45d8-9675-8c52aa7f02c2.png)
+![Phishing Email Sample](https://security.virginia.edu/sites/security/files/styles/scale_600/public/phish%20image_0.png?itok=rVkQtFHV)
 
 ### 2. 🔗 Hover Link Mismatch
-![Hover Link Proof](https://blog.malwarebytes.com/wp-content/uploads/2020/03/fake-link-phishing.png)
+![Hover Link Proof](https://www.computersplusrepair.com/wp-content/uploads/2017/01/Amazon-Customers-Tricked-with-Ticket-Verification-Number-Phishing-Email-473445-2.jpg).
 
 ### 3. 📥 Email Header Analysis via MXToolbox
-![MXToolbox Header Result](https://www.talosintelligence.com/images/header_analysis_result.png)
+![MXToolbox Header Result](https://mxtoolbox.com/public/content/emailheaders/aol_2.jpg).
 
 > 📌 These images were sourced for demonstration purposes. Replace them with your own for original reports.
 
