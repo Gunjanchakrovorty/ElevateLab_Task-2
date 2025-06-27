@@ -72,7 +72,6 @@ Analyze a phishing email for malicious signs like email spoofing, suspicious lin
 ### 3. 📥 Email Header Analysis via MXToolbox
 ![MXToolbox Header Result](https://mxtoolbox.com/public/content/emailheaders/aol_2.jpg).
 
-> 📌 These images were sourced for demonstration purposes. Replace them with your own for original reports.
 
 ---
 
